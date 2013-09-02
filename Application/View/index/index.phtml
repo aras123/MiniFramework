@@ -1,0 +1,10 @@
+<table class="table table-striped table-bordered">
+    <tr><th>ID</th><th>ARTYSTA</th><th>TYTUŁ</th></tr>
+    <?php foreach($this->albums as $album):?>
+    <tr>
+    	<td><?php echo $album->id;?></td>
+    	<td><?php echo $album->artist;?></td>
+    	<td><?php echo $album->title;?></td>
+    </tr>
+	<?php endforeach;?>
+</table>

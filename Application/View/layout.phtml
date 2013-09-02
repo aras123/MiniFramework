@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mini Framework</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo $this -> request -> getHome(); ?>/public/js/jquery.blockUI.js"></script>
+		<style>
+			.dropdown-menu {
+				max-height: 400px;
+				overflow: hidden;
+				overflow-y: auto;
+			}
+			body {
+				padding-top: 50px;
+			}
+			div.container {
+				width: 98% !important;
+			}
+		</style>
+		<link href="<?php echo $this -> request -> getHome(); ?>/public/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div id="menu-gora" class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="brand" href="<?php echo $this -> request -> getHome(); ?>">Mini Framework</a>
+						<div class="nav-collapse collapse">
+							<ul class="nav">
+								<li>
+									<a href="<?php echo $this -> request -> Url(array('controller' => 'index', 'action' => 'index')); ?>">Albumy</a>
+								</li>
+								<li>
+									<a href="<?php echo $this -> request -> Url(array('controller' => 'index', 'action' => 'add')); ?>">Dodaj</a>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php
+			include ($this -> content);
+			?>
+
+			<footer>
+				<p>
+					&copy; MINI FRAMEWORK © 2013
+				</p>
+			</footer>
+
+		</div>
+		<script src="<?php echo $this -> request -> getHome(); ?>/public/js/bootstrap.min.js"></script>
+	</body>
+</html>
