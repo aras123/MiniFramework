@@ -1,6 +1,7 @@
 <?php
 namespace Application\Controller;
 use Framework\Controller;
+use Framework\Filter;
 use Application\Model\Album;
 
 class IndexController extends Controller {
@@ -8,12 +9,17 @@ class IndexController extends Controller {
 	}
 
 	public function IndexAction() {
-		$albums = new Album();
+				$albums = new Album();
 		$this -> view -> albums = $albums -> fetchAll();
 	}
 
 	public function AddAction() {
-		$cos = array('artist' => 'asdasd', 'title' => 'titleeee');
+		$filtr = array(
+			'artist'=>'string',
+			'title' =>'string'
+		);
+		$_POST = Filter::get($_POST,$filtr);
+		
 		if (isset($_POST['artist']) AND isset($_POST['title'])) {
 			if (!empty($_POST['artist']) AND !empty($_POST['title'])) {
 				$artist = trim($_POST['artist']);
