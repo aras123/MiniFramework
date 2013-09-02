@@ -1,8 +1,9 @@
 <?php
 return array(
-		'driver' => 'mysql', //type
-		'host' => 'localhost', //host
-		'dbname' =>'test', //database name
-		'login' => 'test', //database user
-		'password' => 'test' //database password
+		'driver' => 'mysql', 	//typ
+		'host' => 'test', 		//host bazy danych
+		'dbname' =>'test', 		//nazwa bazy danych
+		'login' => 'test', 		//nazwa użytkownika bazy danych
+		'password' => 'test'	//hasło do bazy danych
 	);
+
