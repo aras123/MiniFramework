@@ -1,29 +1,31 @@
 <?php
 namespace Framework;
+use Framework\Cache;
 class View {
 	public $showLayout = true;
 	public $pathLayout;
 	public $content;
 	public $vars = array();
 	public $request;
+	public $cache = false;
 	public function __construct() {
 		$this -> request = new Request();
 	}
 
 	/* Deklarowanie zmiennych */
-	public function __set($index, $value) {
+	public function set($index, $value) {
 		$this -> vars[$index] = $value;
 	}
 
 	/* Pobieranie zmiennych */
-	public function __get($index) {
+	public function get($index) {
 		if (isset($this -> vars[$index]))
 			return $this -> vars[$index];
 		return false;
 	}
-
 	/* Funkcja wyświetla szablon dla controller i action */
 	public function display($controller, $action) {
+		
 		$controller = strtolower($controller);
 		$action = strtolower($action);
 		if (!empty($this -> pathLayout))

@@ -75,7 +75,7 @@ class Request {
 	 * np. echo $this->request->Url(array('controller'=>'index','action'=>'index','id'=>2));
 	 * Jeśli w konfiguracji dla routera jest taka ścieżka zdeklarowana to zmieni link na ten podany w konfiguracji
 	 *  */
-	public function Url(array $array) {
+	public function url(array $array) {
 		$url = '';
 		foreach ($array as $key => $value) {
 			if ($key == 'controller' OR $key == 'action')

@@ -1,7 +1,7 @@
 <h3>Dodaj</h3>
-<?php if($this->message) echo '<div class="alert">'.$this->message.'</div>';?>
+<?php if($this->get('message')) echo '<div class="alert">'.$this->get('message').'</div>';?>
 <form method="post" action="" class="form-inline">
-	<input type="text" name="artist" value="<?php echo $this->form['artist'];?>" placeholder="Podaj nazwę artysty"/>
-	<input type="text" name="title" value="<?php echo $this->form['title'];?>" placeholder="Podaj nazwę utworu"/>
+	<input type="text" name="artist" value="<?php echo $this->get('form')['artist'];?>" placeholder="Podaj nazwę artysty"/>
+	<input type="text" name="title" value="<?php echo $this->get('form')['title'];?>" placeholder="Podaj nazwę utworu"/>
 	<input type="submit" class="btn" value="Dodaj" />
 </form>
